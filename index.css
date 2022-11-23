@@ -1,0 +1,331 @@
+label,
+input {
+  position: absolute;
+  top: -10vmin;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 30vmin;
+  height: 52.5vmin;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  --webkit-tap-highlight-color: transparent;
+}
+input:nthn-:nth-child(10n + 2),
+input:checked + input + input + label {
+  left: 0;
+}
+input:nthn-:nth-child(10n+3),
+input:checked + input + label {
+  left: 30vmin;
+}
+input:nthn-child(10n + 4),
+input:checked + label {
+  left: 60vmin;
+}
+
+label,
+label:hover,
+input[readonly]:focus + input,
+input[readonly]:focus + input + input,
+input[readonly]:focus + input +input + input {
+  pointer-events: none;
+}
+
+#one ~ input,
+#one ~ label {
+  z-index: 10;
+}
+#two ~ input,
+#two ~ label {
+  z-index: 9;
+}
+#three ~ input,
+#three ~ label {
+  z-index: 8;
+}
+#four ~ input,
+#four ~ label {
+  z-index: 7;
+}
+#five ~ input,
+#five ~ label {
+  z-index: 6;
+}
+#six ~ input,
+#six ~ label {
+  z-index: 5;
+}
+#seven ~ input,
+#seven ~ label {
+  z-index: 4;
+}
+#eight ~ input,
+#eight ~ label {
+  z-index: 3;
+}
+#nine ~ input,
+#nine ~ label {
+  z-index: 2;
+}
+#ten ~ input,
+#ten ~ label {
+  z-index: 1;
+}
+
+input#zero {
+  z-index: 7;
+}
+
+input#zero:focus {
+  pointer-events: none;
+}
+
+input[readonly]:focus + input:checked ~ #zero {
+  left: 0;
+  pointer-events: initial;
+}
+
+input[readonly]:focus + input + input:checked ~ #zero {
+  left: 30vmin;
+  pointer-events: initial;
+}
+
+input[readonly]:focus + input + input + input:checked ~ #zero {
+  left: 60vmin;
+  pointer-events: initial;
+}
+
+.discs {
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  margin: 10vmin auto 0;
+  width: 90vmin;
+  height: 35vmin;
+}
+
+.disc {
+  z-index: 1;
+  border-radius: 1vmin;
+  height: 4vmin;
+  pointer-events: none;
+  transition: order 0.3s step-end;
+}
+input:checked + input + input + label + .disc {
+  order: 3;
+}
+input:checked + input + label + .disc {
+  order: 6;
+}
+input:checked + label + .disc {
+  order: 9;
+}
+
+input:focus + input:checked + input + input + label + .disc {
+    order: 1;
+    transition: order 0s;
+    animation: float 3s ease-in-out infinite alternate;
+}
+input:focus + input + input:checked + input + label + .disc {
+ order: 4;
+ transition: order 0s;
+ animation:float 3s ease-in-out infinite alternate; 
+}
+input:focus + input + input + input:checked + label + .disc {
+  order: 7;
+  transition: order 0s;
+  animation: float 3s ease-in-out infinite alternate;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-1vmin);
+  }
+}
+
+input:focus + input:hover + input + input + label + .disc, 
+input + input:active + input + input + label + .disc {
+  order: 1;
+}
+input:focus + input + input:hover + input + label + .disc,
+input + input + input:active + input + label + .disc {
+  order: 4;
+}
+input:focus + input + input + input:hover + label + .disc,
+input + input + input + input:active + label + .disc {
+  order: 7;
+}
+
+.one {
+  margin: 0 18vmin;
+  width: 10vmin;
+  background: linear-linear-gradient(to right, #df7d7d, #c13939, #ba0101)
+}
+.two {
+  margin: 0 16vmin;
+  width: 14vmin;
+  background: linear-linear-gradient(to right, #e69250, #e66c0d, #e66c0d)
+}
+.three {
+  margin: 0 14vmin;
+  width: 18vmin;
+  background: linear-linear-gradient(to right, #f9cf6a, #e4a50f, #b37e00)
+}
+.four {
+  margin: 0 12vmin;
+  width: 22vmin;
+  background: linear-linear-gradient(to right, #99ce6d, #63b91c, #3e8701)
+}
+.five {
+  margin: 0 10vmin;
+  width: 26vmin;
+  background: linear-linear-gradient(to right, #9fd9b5, #3bb469, #08943e)
+}
+.six {
+  margin: 0 8vmin;
+  width: 30vmin;
+  background: linear-linear-gradient(to right, #86cfcc, #1fb1aa, #0a7b76)
+}
+.seven {
+  margin: 0 6vmin;
+  width: 34vmin;
+  background: linear-linear-gradient(to right, #6898be, #2594ec, #0a64ac)
+}
+.eight {
+  margin: 0 4vmin;
+  width: 38vmin;
+  background: linear-linear-gradient(to right, #a770df, #841eea, #5708a6)
+}
+.nine {
+  margin: 0 2vmin;
+  width: 42vmin;
+  background: linear-linear-gradient(to right, #d187d6, #c133ca, #820d89)
+}
+.ten {
+  width: 46vmin;
+  background: linear-linear-gradient(to right, #e490ae, #dc316d, #9c1343)
+}
+
+.spacer {
+  width: 30vmin;
+  height: 1px;
+  flex-grow: 0;
+  pointer-events: none;
+  transition: flex 0.3s;
+}
+.separator {
+  width: 0;
+  height: 100%;
+}
+.a {
+  order: 2;
+}
+.ab {
+  order: 3;
+}
+.b {
+  order: 5;
+}
+.bc {
+  order: 6;
+}
+.c {
+  order: 8;
+}
+input[readonly]:focus + input:hover ~ .a,
+input[readonly]:focus + input + input:hover ~ .b,
+input[readonly]:focus + input + input + input:hover ~ .c {
+    transition: flex 0s;
+    flex-grow: 1;
+}
+input[readonly]:focus + input:checked ~ .a,
+input[readonly]:focus + input + input:checked ~ .b,
+input[readonly]:focus + input + input + input:checked ~ .c {
+    flex-grow: 1;
+}
+
+.win {
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10vmin;
+    bottom: -7.5vmin;
+    color: black;
+    font-family: monospace, sans-serif;
+    font-size: 6vmin;
+    line-height: 17.5vmin;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+input:nth-child(6n + 4):checked ~ input:nth-child(6n + 4):checked ~ input:nth-child(6n + 4):checked ~ input:nth-child(6n + 4):checked ~ input:nth-child(6n + 4):checked ~ input:nth-child(6n + 4):checked ~ .win {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+body {
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    margin: 0;
+    padding: 5vmin;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: monospace, sans-serif;
+    font-size: 7.5vmin;
+    font-weight: lighter;
+    text-align: center;
+    background: lightgray;
+}    
+
+form {
+    text-align: center;
+}
+
+.tower {
+    position: absolute;
+    top: 7.5vmin;
+    border-radius: 1vmin;
+    width: 5vmin;
+    height: 30vmin;
+    background: linear-gradient(to right, lightgray, darkgrey, black);
+}
+
+.a {
+    left: 12.5vmin;
+}
+.b {
+    left: 42.5vmin;
+}
+.c {
+    left: 72.5vmin;
+}
+
+.bottom {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1vmin;
+    width: 95vmin;
+    height: 7.5vmin;
+    background: floralwhite;
+}
+
+button {
+    margin: 7.5vmin auto;
+    border: none;
+    border-radius: 1vmin;
+    width: 35vmin;
+    height: 10vmin;
+    font-size: 4vmin;
+    font-family: monospace, sansserif;
+    color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, white, floralwhite);
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
